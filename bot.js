@@ -27,19 +27,15 @@ const client = new Client({
 
 
 // QR
-const QRCode = require("qrcode");
-const fs = require("fs");
-
 client.on("qr", async (qr) => {
 
-    console.log("QR received");
+    const QRCode = require("qrcode");
 
-    await QRCode.toFile("/tmp/qr.png", qr);
+    await QRCode.toFile("qr.png", qr);
 
-    console.log("QR saved at /tmp/qr.png");
+    console.log("QR saved as qr.png");
 
 });
-
 // READY
 client.on("ready", ()=>{
  console.log("🌟 PW AN-401NA FINAL BOT ONLINE");
@@ -511,3 +507,4 @@ Saved: ${savedMessages.length}`));
 // START
 
 client.initialize();
+
