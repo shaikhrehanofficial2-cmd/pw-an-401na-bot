@@ -1,6 +1,16 @@
 // 🌟 PW AN-401NA FINAL ULTRA PRO MAX BOT
 // Made By Shaikh Rehan
 
+const express = require("express");
+const app = express();
+
+app.use(express.static("public"));
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("QR Server running on port", PORT);
+});
 const OWNER = "918087994607@c.us";
 
 const { Client, LocalAuth } = require("whatsapp-web.js");
@@ -514,5 +524,6 @@ Saved: ${savedMessages.length}`));
 // START
 
 client.initialize();
+
 
 
