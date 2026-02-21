@@ -27,11 +27,18 @@ const client = new Client({
 
 
 // QR
-client.on("qr", qr=>{
- console.log("Scan QR Code");
- qrcode.generate(qr,{small:true});
-});
+const QRCode = require("qrcode");
+const fs = require("fs");
 
+client.on("qr", async (qr) => {
+
+    console.log("QR received");
+
+    await QRCode.toFile("/tmp/qr.png", qr);
+
+    console.log("QR saved at /tmp/qr.png");
+
+});
 
 // READY
 client.on("ready", ()=>{
@@ -502,4 +509,5 @@ Saved: ${savedMessages.length}`));
 
 
 // START
+
 client.initialize();
