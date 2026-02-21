@@ -1,0 +1,16 @@
+{
+  "name": "pw-an-401na-bot",
+  "version": "5.0.0",
+  "description": "PW AN-401NA Premium WhatsApp Study Bot - Made By Shaikh Rehan",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "Shaikh Rehan",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^22.15.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#main"
+  }
+}
