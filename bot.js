@@ -30,10 +30,17 @@ const client = new Client({
 client.on("qr", async (qr) => {
 
     const QRCode = require("qrcode");
+    const fs = require("fs");
 
-    await QRCode.toFile("qr.png", qr);
+    const path = "./public";
 
-    console.log("QR saved as qr.png");
+    if (!fs.existsSync(path)) {
+        fs.mkdirSync(path);
+    }
+
+    await QRCode.toFile("./public/qr.png", qr);
+
+    console.log("QR saved at public/qr.png");
 
 });
 // READY
@@ -507,4 +514,5 @@ Saved: ${savedMessages.length}`));
 // START
 
 client.initialize();
+
 
